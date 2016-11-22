@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/jenessawhite/shareit/issues"
   },
-  "homepage": "https://github.com/jenessawhite/shareit#readme"
+  "homepage": "https://github.com/jenessawhite/shareit#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "querystring": "^0.2.0",
+    "request": "^2.79.0"
+  }
 }
