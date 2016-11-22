@@ -1,10 +1,20 @@
-var express = require('express')
-var app = express()
+$(function() {
+  function loadIt(e) {
+    var linkID = $('#linkID').val();
+    if(typeof linkID == 'undefined' || linkID == '' || linkID == null) {
+      alert('Please Try Again')
+    } else {
+      console.log(linkID);
+    }
+    $.ajax({
+    url:"https://api.spotify.com/v1/search?q=" + encodeURIComponent(linkID) + "&type=track,artist&limit=20"
+    }).then(function(response) {
 
-app.get('/', function (req, res) {
-  res.send('Let\'s get it!')
-})
+    var holder = $('<div class="holders"></div>');
+    console.log(response);
 
-app.listen(8888, function () {
-  console.log('Example app listening on port 8888!')
+    })
+  }
+  $('#send').on('click', loadIt);
+
 })
