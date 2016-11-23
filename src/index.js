@@ -11,36 +11,35 @@ function loadIt(e) {
     } else {
       $.ajax(
         {
-          url:"https://api.spotify.com/v1/search?q=" + encodeURIComponent(pageReq) + "&type=track,artist&limit=50"
+          url:"https://api.spotify.com/v1/search?q=" + encodeURIComponent(pageReq) + "&type=track&limit=50"
         })
         .done(function(data){
-          // console.log(spotify);
+          console.log(data);
           var group = $('<div class="group"></div>')
-
-          if (data.artists.length === "undefined" && data.tracks.length === "undefined") {
-            alert ('Sorry we can\'t find any artists or tracks by that name!')
-          } else {
-            $.each(data,function(index, res){
-              console.log(res.items);
-              //artist image
-              // group.append($('<img class="character-photo"/>').attr('src',res.thumbnail.path + "/detail." + res.thumbnail.extension));
-              //artist name
-              // group.append($('<a class="name" target="_blank"></a>').attr('href', res.urls[0].url).text(res.name));
-              //artist ID
-              // group.append($('<p class="credit"></p>').text('Data provided by Marvel. © 2016 MARVEL'));
-              //artist URI
-              // group.append($('<p class="description"></p>').text(res.description));
-
-              //track ame
-            //   group.append($('<p class="available"></p>').text('Comics available: ' + res.comics.available));
-            //   //"Your Comic:"
-            //   group.append($('<h3 class="yourcomic"></h3>').text('Your comic: '));
-            //   //horizontal line
-            //   group.append($('<hr>'));
-            //
+            $.each(data,function(index, response){
+              console.log(response.items);
+              $.each(response.items,function(i, r){
+                console.log(response.items[i]);
+                var subgroup = $('<div class="subgroup"></div>')
+                //track name
+                subgroup.append($('<h3></h3>').text(response.items[i].name));
+                //track artist
+                subgroup.append($('<h4></h4>').text(response.items[i].artists[0].name));
+                //track album
+                subgroup.append($('<h6></h6>').text(response.items[i].album.name));
+                //track ID
+                subgroup.append($('<p></p>').text(response.items[i].id));
+                //track URI
+                subgroup.append($('<p></p>').text(response.items[i].uri));
+                //track preview URI
+                subgroup.append($('<audio controls><source /></audio>').attr('src',response.items[i].preview_url));
+                //horizontal line
+                subgroup.append($('<hr>') );
+                //append subgroups to group
+                group.append(subgroup);
+              });
             })
-            $('.content').empty().append(group);
-          }
+          $(".content").empty().append(group);
         })
         .fail(function(err){
         // the error codes are listed on the dev site
