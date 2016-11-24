@@ -1,3 +1,37 @@
+/*! hideshare - v0.1.0 - 2013-09-11
+* https://github.com/arnonate/jQuery-FASS-Widget
+* Copyright (c) 2013 Nate Arnold; Licensed MIT */
+/* ========================================================================
+ * HIDESHARE v1.0.0
+ * https://github.com/arnonate/hideshare
+ * ========================================================================
+
+  Copyright (c) 2013 Nate Arnold
+
+  Permission is hereby granted, free of charge, to any person
+  obtaining a copy of this software and associated documentation
+  files (the "Software"), to deal in the Software without
+  restriction, including without limitation the rights to use,
+  copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the
+  Software is furnished to do so, subject to the following
+  conditions:
+
+  The above copyright notice and this permission notice shall be
+  included in all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+  OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+  HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+  OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+/*global jQuery:false, window:false, document:false */
+
 ;(function(window, $) {
 
   "use strict";
@@ -211,80 +245,6 @@
     });
   };
 
-/*------------------------------*/
-
-var client_id = 'a545b9c515e14ff6b50077bac02b38f8'; // Your client id
-var client_secret = '0df608227b36427e890afb56d21ac2e2'; // Your secret
-var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
-
-function loadIt(e) {
-  e.preventDefault();
-
-  var pageReq = $('.pageReq').val();
-    if (pageReq == '' || typeof pageReq == null || typeof pageReq == undefined) {
-      alert('Don\'t forget to enter your character!')
-    } else {
-      $.ajax(
-        {
-          url:"https://api.spotify.com/v1/search?q=" + encodeURIComponent(pageReq) + "&type=track&limit=10"
-        })
-        .done(function(data){
-          console.log(data);
-          var group = $('<div class="group"></div>')
-            $.each(data,function(index, response){
-              $.each(response.items,function(i, r){
-                console.log(response.items[i]);
-                var subgroup = $('<div class="subgroup"></div>')
-                //track name
-                subgroup.append($('<h3 class="track-name"></h3>').text(response.items[i].name));
-                //track artist
-                subgroup.append($('<h4 class="track-artist"></h4>').text(response.items[i].artists[0].name));
-                //track album
-                subgroup.append($('<h5 class="track-album"></h5>').text(response.items[i].album.name));
-                // //track ID
-                // subgroup.append($('<p></p>').text(response.items[i].id));
-                // //track URI
-                // subgroup.append($('<p></p>').text(response.items[i].uri));
-                //track preview URI
-                subgroup.append($('<audio controls><source /></audio>').attr('src',response.items[i].preview_url));
-                //horizontal line
-                subgroup.append($('<hr>') );
-                //sharing
-                var shareLink = response.items[i].external_urls.spotify;
-                // subgroup.append($('<a target="_blank"></a>').attr('href', response.items[i].external_urls.spotify).text('open on spotify'));
-                $(document).ready(function() {
-                  $(".share").hideshare({
-                    link: shareLink, // Link to URL defaults to document.URL
-                    title: "", // Title for social post defaults to document.title
-                    media: "", // Link to image file defaults to null
-                    facebook: true, // Turns on Facebook sharing
-                    twitter: true, // Turns on Twitter sharing
-                    pinterest: true, // Turns on Pinterest sharing
-                    googleplus: true, // Turns on Google Plus sharing
-                    linkedin: false, // Turns on LinkedIn sharing
-                    position: "top", // Options: Top, Bottom, Left, Right
-                    speed: 50 // Speed of transition
-                  });
-                });
-                subgroup.append($('<a class="share"></a>').attr('href', '#').text('#SHAREit'));
-                //horizontal line
-                subgroup.append($('<hr>') );
-                //append subgroups to group
-                group.append(subgroup);
-              });
-            })
-          $(".content").empty().append(group);
-        })
-        .fail(function(err){
-        // the error codes are listed on the dev site
-          console.log(err);
-          alert("Uh oh! We've got some errors here! Please try again later. We promise we'll fix it", err)
-        })
-      }
-
-    }
-
-  $('.search').on("submit", loadIt);
   window.Hideshare = Hideshare;
 
 })(window, jQuery);

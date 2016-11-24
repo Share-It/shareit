@@ -1,0 +1,31 @@
+<html>
+
+<head>
+  <title>HIDESHARE Social Sharing jQuery Plugin</title>
+  <meta name="description" content="jQuery plugin for social sharing. Made for developers. Easy enough for beginners.">
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link href="../hideshare.css" rel="stylesheet">
+</head>
+
+<body>
+  <img src="http://farm7.staticflickr.com/6213/6243090894_8b8dd862cd.jpg" alt="Hideshare Social Sharing Plugin">
+  <a class="share" href="#">share me</a>
+  <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+  <script src="../hideshare.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $(".share").hideshare({
+        link: "http://natearnold.me/hideshare/example",
+        media: "http://farm7.staticflickr.com/6213/6243090894_8b8dd862cd.jpg",
+        position: "top",
+        linkedin: false
+      });
+    });
+
+  </script>
+
+
+
+</body>
+
+</html>

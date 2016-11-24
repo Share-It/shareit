@@ -9,42 +9,32 @@
   <link rel="stylesheet" href="stylesheets/normalize.css">
   <link rel="stylesheet" href="stylesheets/index.css">
   <title>SHAREit | If you dig it...SHAREit!</title>
-
-  <!-- sharing buttons plugin -->
-  <script type="text/javascript">
-    var switchTo5x = true;
-
-  </script>
-  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-  <script type="text/javascript">
-    stLight.options({
-      publisher: "932a0ab8-e522-4c6d-b679-4be0e6fb3f12",
-      doNotHash: false,
-      doNotCopy: false,
-      hashAddressBar: true
-    });
-
-  </script>
+  <script src="https://use.fontawesome.com/c218135cef.js"></script>
 </head>
 
 <body>
-  <form class="search" role="search">
-    <label for="character">Character Search</label>
-    <input class="pageReq" id="pageReq" type="text" name="name" placeholder="Search here">
-    <input class="loadReq" type="submit" name="name" value="Search">
-  </form>
+<div class="main-container">
+  <div class="header">
+    <img class="word-logo" src="../assets/shareit-icon-words.png"/>
+    <form class="search" role="search">
+      <label for="searchRequest"></label>
+      <input class="pageReq" id="pageReq" type="text" name="name" placeholder="Search track here">
+      <input class="loadReq" type="submit" name="name" value="Search">
+    </form>
+  </div>
+  <div class= "middle-section-mobile">
+    <ul class="listen-likeit">
+      <li>Listen.</li>
+      <li>Like it?</li>
+    </ul>
+    <img class="word-logo" src="../assets/shareit-icon-words.png"/>
+  </div>
+</div>
 
-  <div class="content">
-  </div>
-  <div class="shareButtons">
-    <span class='st_facebook_large' displayText='Facebook'></span>
-    <span class='st_twitter_large' displayText='Tweet'></span>
-    <span class='st_pinterest_large' displayText='Pinterest'></span>
-    <span class='st_tumblr_large' displayText='Tumblr'></span>
-    <span class='st_email_large' displayText='Email'></span>
-  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+  <!-- <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script> -->
+  <!-- <script src="hideshare/hideshare.js"></script> -->
   <script src="src/index.js" charset="utf-8"></script>
 </body>
 
