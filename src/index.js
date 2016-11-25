@@ -30,8 +30,6 @@ function loadIt(e) {
                 // subgroup.append($('<p></p>').text(response.items[i].uri));
                 //track preview URI
                 subgroup.append($('<audio controls><source /></audio>').attr('src',response.items[i].preview_url));
-                //horizontal line
-                subgroup.append($('<hr>') );
                 //sharing
                 var shareLink = response.items[i].external_urls.spotify;
                 // subgroup.append($('<a target="_blank"></a>').attr('href', response.items[i].external_urls.spotify).text('open on spotify'));
@@ -46,10 +44,10 @@ function loadIt(e) {
                 group.append(subgroup);
 
                 // Only once we've actually got our subgroup appended to the
-                // overall tree are we free to run the plugin. This is a problem
+                // overall then are we free to run the plugin. This is a problem
                 // with this plugin so this is a workaround.
                 shareElement.hideshare({
-                  link: 'http://google.com',// shareLink, // Link to URL defaults to document.URL
+                  link: shareLink, // shareLink, // Link to URL defaults to document.URL
                   title: "", // Title for social post defaults to document.title
                   media: "", // Link to image file defaults to null
                   facebook: true, // Turns on Facebook sharing
@@ -57,7 +55,7 @@ function loadIt(e) {
                   pinterest: true, // Turns on Pinterest sharing
                   googleplus: true, // Turns on Google Plus sharing
                   linkedin: false, // Turns on LinkedIn sharing
-                  position: "top", // Options: Top, Bottom, Left, Right
+                  position: "Right", // Options: Top, Bottom, Left, Right
                   speed: 50 // Speed of transition
                 })
               });
