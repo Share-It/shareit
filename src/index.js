@@ -35,25 +35,31 @@ function loadIt(e) {
                 //sharing
                 var shareLink = response.items[i].external_urls.spotify;
                 // subgroup.append($('<a target="_blank"></a>').attr('href', response.items[i].external_urls.spotify).text('open on spotify'));
-                $(document).ready(function() {
-                  $(".share").hideshare({
-                    link: shareLink, // Link to URL defaults to document.URL
-                    title: "", // Title for social post defaults to document.title
-                    media: "", // Link to image file defaults to null
-                    facebook: true, // Turns on Facebook sharing
-                    twitter: true, // Turns on Twitter sharing
-                    pinterest: true, // Turns on Pinterest sharing
-                    googleplus: true, // Turns on Google Plus sharing
-                    linkedin: false, // Turns on LinkedIn sharing
-                    position: "top", // Options: Top, Bottom, Left, Right
-                    speed: 50 // Speed of transition
-                  });
-                });
-                subgroup.append($('<a class="share"></a>').attr('href', '#').text('#SHAREit'));
+
+                // Keep a reference to the element we're creating so that we can use it later
+                var shareElement = $('<a class="share share-'+i+'"></a>').attr('href', '#').text('#SHAREit');
+                // Add it to its container immediately
+                subgroup.append(shareElement);
                 //horizontal line
                 subgroup.append($('<hr>') );
                 //append subgroups to group
                 group.append(subgroup);
+
+                // Only once we've actually got our subgroup appended to the
+                // overall tree are we free to run the plugin. This is a problem
+                // with this plugin so this is a workaround.
+                shareElement.hideshare({
+                  link: 'http://google.com',// shareLink, // Link to URL defaults to document.URL
+                  title: "", // Title for social post defaults to document.title
+                  media: "", // Link to image file defaults to null
+                  facebook: true, // Turns on Facebook sharing
+                  twitter: true, // Turns on Twitter sharing
+                  pinterest: true, // Turns on Pinterest sharing
+                  googleplus: true, // Turns on Google Plus sharing
+                  linkedin: false, // Turns on LinkedIn sharing
+                  position: "top", // Options: Top, Bottom, Left, Right
+                  speed: 50 // Speed of transition
+                })
               });
             })
           $(".content").empty().append(group);
@@ -68,5 +74,4 @@ function loadIt(e) {
     }
 
   $('.search').on("submit", loadIt);
-
 });
