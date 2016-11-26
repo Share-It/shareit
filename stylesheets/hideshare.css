@@ -4,7 +4,7 @@
 .hideshare-wrap {
   margin: 0 auto;
   text-align: center;
-  position: relative;
+  /*position: relative;*/
 }
 .hideshare-wrap, .hideshare-list {
   /* position: absolute; */
@@ -27,7 +27,7 @@
 }
 
 .share {
-  display: block;
+  /*display: block;*/
   width: 200px;
   margin: 0 auto;
   background: #dedede;

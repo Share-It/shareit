@@ -216,6 +216,8 @@
 var client_id = 'a545b9c515e14ff6b50077bac02b38f8'; // Your client id
 var client_secret = '0df608227b36427e890afb56d21ac2e2'; // Your secret
 var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
+=======
+>>>>>>> d11ab39ab1fff0050fbc4c5f51fcee3e1da73912
 $(function(){
 
 function loadIt(e) {
@@ -248,6 +250,8 @@ function loadIt(e) {
                 // subgroup.append($('<p></p>').text(response.items[i].uri));
                 //track preview URI
                 subgroup.append($('<audio controls><source /></audio>').attr('src',response.items[i].preview_url));
+                //horizontal line
+                subgroup.append($('<hr>') );
                 //sharing
                 var shareLink = response.items[i].external_urls.spotify;
                 // subgroup.append($('<a target="_blank"></a>').attr('href', response.items[i].external_urls.spotify).text('open on spotify'));
@@ -258,34 +262,14 @@ function loadIt(e) {
                 subgroup.append(shareElement);
                 //horizontal line
                 subgroup.append($('<hr>') );
-                //sharing
-                var shareLink = response.items[i].external_urls.spotify;
-                // subgroup.append($('<a target="_blank"></a>').attr('href', response.items[i].external_urls.spotify).text('open on spotify'));
-                $(document).ready(function() {
-                  $(".share").hideshare({
-                    link: shareLink, // Link to URL defaults to document.URL
-                    title: "", // Title for social post defaults to document.title
-                    media: "", // Link to image file defaults to null
-                    facebook: true, // Turns on Facebook sharing
-                    twitter: true, // Turns on Twitter sharing
-                    pinterest: true, // Turns on Pinterest sharing
-                    googleplus: true, // Turns on Google Plus sharing
-                    linkedin: false, // Turns on LinkedIn sharing
-                    position: "top", // Options: Top, Bottom, Left, Right
-                    speed: 50 // Speed of transition
-                  });
-                });
-                subgroup.append($('<a class="share"></a>').attr('href', '#').text('#SHAREit'));
-                //horizontal line
-                subgroup.append($('<hr>') );
                 //append subgroups to group
                 group.append(subgroup);
 
                 // Only once we've actually got our subgroup appended to the
-                // overall then are we free to run the plugin. This is a problem
+                // overall tree are we free to run the plugin. This is a problem
                 // with this plugin so this is a workaround.
                 shareElement.hideshare({
-                  link: shareLink, // shareLink, // Link to URL defaults to document.URL
+                  link: shareLink,// shareLink, // Link to URL defaults to document.URL
                   title: "", // Title for social post defaults to document.title
                   media: "", // Link to image file defaults to null
                   facebook: true, // Turns on Facebook sharing
@@ -293,7 +277,7 @@ function loadIt(e) {
                   pinterest: true, // Turns on Pinterest sharing
                   googleplus: true, // Turns on Google Plus sharing
                   linkedin: false, // Turns on LinkedIn sharing
-                  position: "Right", // Options: Top, Bottom, Left, Right
+                  position: "left", // Options: Top, Bottom, Left, Right
                   speed: 50 // Speed of transition
                 })
               });
@@ -310,7 +294,4 @@ function loadIt(e) {
     }
 
   $('.search').on("submit", loadIt);
-  window.Hideshare = Hideshare;
-
-})(window, jQuery);
 });
