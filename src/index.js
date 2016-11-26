@@ -57,7 +57,7 @@ function loadIt(e) {
                   pinterest: true, // Turns on Pinterest sharing
                   googleplus: true, // Turns on Google Plus sharing
                   linkedin: false, // Turns on LinkedIn sharing
-                  position: "right", // Options: Top, Bottom, Left, Right
+                  position: "left", // Options: Top, Bottom, Left, Right
                   speed: 50 // Speed of transition
                 })
               });
