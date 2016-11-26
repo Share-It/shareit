@@ -4,10 +4,10 @@
 .hideshare-wrap {
   margin: 0 auto;
   text-align: center;
-  position: relative;
+  /*position: relative;*/
 }
-.hideshare-wrap .hideshare-list {
-  position: absolute;
+.hideshare-wrap, .hideshare-list {
+  /* position: absolute; */
   top: 0;
   left: 0;
   right: 0;
@@ -27,15 +27,11 @@
 }
 
 .share {
-  display: block;
+  /*display: block;*/
   width: 200px;
   margin: 0 auto;
   background: #dedede;
   color: #232323;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
   border-radius: 5px;
   padding: 1em 0;
   border: 1px solid #444;
