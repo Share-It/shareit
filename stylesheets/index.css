@@ -98,3 +98,42 @@ head, body {
   color: white;
   font-size: 12px;
 }
+
+.group {
+  /*border: 2px solid red;*/
+  display: flex;
+  flex-direction: column;
+}
+
+.subgroup {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5rem;
+  margin-bottom: 5rem;
+}
+
+.track-name {
+  margin: 0 auto;
+  color: #4E4E4E;
+}
+
+.track-artist {
+  margin: 0 auto;
+  color: #4E4E4E;
+}
+
+.track-album {
+  margin: 0 auto;
+  color: #4E4E4E;
+}
+
+audio {
+  margin: 0 auto;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+}
+
+hr {
+  border: 3px solid grey;
+
+}

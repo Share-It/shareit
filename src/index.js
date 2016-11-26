@@ -31,17 +31,18 @@ function loadIt(e) {
                 //track preview URI
                 subgroup.append($('<audio controls><source /></audio>').attr('src',response.items[i].preview_url));
                 //horizontal line
-                subgroup.append($('<hr>') );
+                // subgroup.append($('<hr>') );
                 //sharing
                 var shareLink = response.items[i].external_urls.spotify;
                 // subgroup.append($('<a target="_blank"></a>').attr('href', response.items[i].external_urls.spotify).text('open on spotify'));
 
                 // Keep a reference to the element we're creating so that we can use it later
-                var shareElement = $('<a class="share share-'+i+'"></a>').attr('href', '#').text('#SHAREit');
+                var shareElement = $('<a class="share share-'+i+'"></a>').attr('href', '#').text("SHAREit");
                 // Add it to its container immediately
                 subgroup.append(shareElement);
                 //horizontal line
-                subgroup.append($('<hr>') );
+
+                // subgroup.append($('<hr>') );
                 //append subgroups to group
                 group.append(subgroup);
 
