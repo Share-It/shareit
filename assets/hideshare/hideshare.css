@@ -2,9 +2,9 @@
   HIDESHARE CSS
 */
 .hideshare-wrap {
-  margin: 0 auto;
   text-align: center;
-  position: relative;
+
+  /*position: relative;*/
 }
 .hideshare-wrap, .hideshare-list {
   /* position: absolute; */
@@ -27,26 +27,37 @@
 }
 
 .share {
-  display: block;
-  width: 200px;
-  margin: 0 auto;
-  background: #dedede;
-  color: #232323;
+  width: 4rem;
+  margin-left: 11rem;
+  font-family: sans-serif;
+  background: #fafafa;
+  color: #4E4E4E;
   border-radius: 5px;
-  padding: 1em 0;
-  border: 1px solid #444;
+  border: 1px solid lightgrey;
   text-align: center;
-  font-weight: 700;
-  text-transform: uppercase;
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.6);
 }
 .share:hover {
   background: #ffffff;
 }
+
+
+.hideshare-list.shown{
+  display: flex;
+  align-items: center;
+  /*border: 2px solid red;*/
+  color: #15CAFF;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  margin-left: 8.5rem;
+  padding: 0;
+
+}
+
 .hideshare-list a {
-  color: #dedede;
+  color: #15CAFF;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
 }
 .hideshare-list a:hover {
   color: #ffffff;
+
 }
