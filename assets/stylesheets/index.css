@@ -1,56 +1,100 @@
-/*
-  HIDESHARE CSS
-*/
-.hideshare-wrap {
-  margin: 0 auto;
-  text-align: center;
-  position: relative;
-}
-.hideshare-wrap .hideshare-list {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+* {
+  box-sizing: border-box;
   margin: 0;
-  padding: 0;
-  list-style: none;
-  text-align: center;
-}
-.hideshare-wrap li {
-  display: inline-block;
-  zoom: 1;
-  *display: inline;
-  margin: 10px 5px 0;
-}
-.hideshare-wrap span {
-  display: none;
 }
 
-.share {
-  display: block;
-  width: 200px;
+.main-container {
+}
+
+.header {
+  /*border: 2px solid red;*/
+  background-color: #FF8915;
+  display: flex;
+  flex-direction: column;
+  height: 11rem;
+}
+
+.word-logo {
+  width: 8rem;
+  height: 5rem;
   margin: 0 auto;
-  background: #dedede;
-  color: #232323;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
+  margin-bottom: 1rem;
+  margin-top: .5rem;
+}
+
+.search {
+  /*border: 2px solid blue;*/
+  display: flex;
+  justify-content: center;
+}
+
+.searchRequest {
+  color: #383838;
+}
+
+.pageReq {
+  background-color: #FAFAFA;
+  margin-right: 1rem;
   border-radius: 5px;
-  padding: 1em 0;
-  border: 1px solid #444;
+  width: 12rem;
+  height: 3.5rem;
+  border: none;
+  font-size: 1.3rem;
+}
+
+.loadReq {
+  background-color: #15CAFF;
+  color: #383838;
+  border: none;
+  border-radius: 5px;
+  width: 5rem;
+  height: 3.5rem;
+  cursor: pointer;
+}
+
+.middle-section-mobile {
+  /*border: 2px solid blue;*/
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8rem;
+  margin-top: 3rem;
+}
+
+.listen-likeit {
+  /*border: 2px solid red;*/
+  list-style: none;
   text-align: center;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.6);
+  padding: 0;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
 }
-.share:hover {
-  background: #ffffff;
+
+.list-item {
+  line-height: 3.5rem;
+  font-size: 28px;
+  color: #383838;
+  font-family: sans-serif;
 }
-.hideshare-list a {
-  color: #dedede;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+
+.footer {
+  /*border: 2px solid red;*/
+  display: flex;
+  margin-top: 10rem;
+  flex-direction: column;
+  background-color: #FF8915;
+  justify-content: space-around;
+  align-items: center;
+  height: 5rem;
 }
-.hideshare-list a:hover {
-  color: #ffffff;
+
+.github-logo {
+  line-height: 1rem;
+  width: 38px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.fork-us {
+  color: white;
+  font-size: 12px;
 }

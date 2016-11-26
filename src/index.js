@@ -216,9 +216,7 @@
 var client_id = 'a545b9c515e14ff6b50077bac02b38f8'; // Your client id
 var client_secret = '0df608227b36427e890afb56d21ac2e2'; // Your secret
 var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
-=======
 $(function(){
->>>>>>> 8571393220c38f47fa77a2d0b13a4bb86f85d39d
 
 function loadIt(e) {
   e.preventDefault();
