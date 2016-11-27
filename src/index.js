@@ -23,6 +23,7 @@ function loadIt(e) {
                 //track name
                 subgroup.append($('<h3 class="track-name"></h3>').text(response.items[i].name));
                 //track artist
+                var shareArtist = response.items[i].artists[0].name;
                 subgroup.append($('<h4 class="track-artist"></h4>').text(response.items[i].artists[0].name));
                 //track album
                 subgroup.append($('<h5 class="track-album"></h5>').text(response.items[i].album.name));
@@ -41,7 +42,7 @@ function loadIt(e) {
                 // with this plugin so this is a workaround.
                 shareElement.hideshare({
                   link: shareLink,// shareLink, // Link to URL defaults to document.URL
-                  title: "", // Title for social post defaults to document.title
+                  title: "Check out this dope track from " + shareArtist + " that I found on #SHAREit", // Title for social post defaults to document.title
                   media: "", // Link to image file defaults to null
                   facebook: true, // Turns on Facebook sharing
                   twitter: true, // Turns on Twitter sharing
@@ -49,7 +50,7 @@ function loadIt(e) {
                   googleplus: true, // Turns on Google Plus sharing
                   linkedin: false, // Turns on LinkedIn sharing
                   position: "Bottom", // Options: Top, Bottom, Left, Right
-                  speed: 50 // Speed of transition
+                  speed: 40 // Speed of transition
                 })
               });
             })
