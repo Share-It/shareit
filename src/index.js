@@ -9,7 +9,7 @@ function loadIt(e) {
     } else {
       $.ajax(
         {
-          url:"https://api.spotify.com/v1/search?q=" + encodeURIComponent(pageReq) + "&type=track&limit=10"
+          url:"https://api.spotify.com/v1/search?q=" + encodeURIComponent(pageReq) + "&type=track&limit=12"
         })
         .done(function(data){
           console.log(data);
@@ -18,34 +18,24 @@ function loadIt(e) {
               $.each(response.items,function(i, r){
                 console.log(response.items[i]);
                 var subgroup = $('<div class="subgroup"></div>')
+                //line break
+                subgroup.append($('<hr>'));
                 //track name
                 subgroup.append($('<h3 class="track-name"></h3>').text(response.items[i].name));
                 //track artist
                 subgroup.append($('<h4 class="track-artist"></h4>').text(response.items[i].artists[0].name));
                 //track album
                 subgroup.append($('<h5 class="track-album"></h5>').text(response.items[i].album.name));
-                // //track ID
-                // subgroup.append($('<p></p>').text(response.items[i].id));
-                // //track URI
-                // subgroup.append($('<p></p>').text(response.items[i].uri));
                 //track preview URI
                 subgroup.append($('<audio controls><source /></audio>').attr('src',response.items[i].preview_url));
-                //horizontal line
-                // subgroup.append($('<hr>') );
                 //sharing
                 var shareLink = response.items[i].external_urls.spotify;
-                // subgroup.append($('<a target="_blank"></a>').attr('href', response.items[i].external_urls.spotify).text('open on spotify'));
-
                 // Keep a reference to the element we're creating so that we can use it later
                 var shareElement = $('<a class="share share-'+i+'"></a>').attr('href', '#').text("SHAREit");
                 // Add it to its container immediately
                 subgroup.append(shareElement);
-                //horizontal line
-
-                // subgroup.append($('<hr>') );
                 //append subgroups to group
                 group.append(subgroup);
-
                 // Only once we've actually got our subgroup appended to the
                 // overall tree are we free to run the plugin. This is a problem
                 // with this plugin so this is a workaround.
@@ -58,7 +48,7 @@ function loadIt(e) {
                   pinterest: true, // Turns on Pinterest sharing
                   googleplus: true, // Turns on Google Plus sharing
                   linkedin: false, // Turns on LinkedIn sharing
-                  position: "left", // Options: Top, Bottom, Left, Right
+                  position: "Bottom", // Options: Top, Bottom, Left, Right
                   speed: 50 // Speed of transition
                 })
               });

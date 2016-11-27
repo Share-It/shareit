@@ -3,15 +3,15 @@
 */
 .hideshare-wrap {
   text-align: center;
-
-  /*position: relative;*/
+  height: 0px;
 }
+
 .hideshare-wrap, .hideshare-list {
   /* position: absolute; */
   top: 0;
   left: 0;
   right: 0;
-  margin: 0;
+  margin: 1rem 0 0.5rem -4rem;
   padding: 0;
   list-style: none;
   text-align: center;
@@ -28,7 +28,7 @@
 
 .share {
   width: 4rem;
-  margin-left: 11rem;
+  margin-left: -2rem;
   font-family: sans-serif;
   background: #fafafa;
   color: #4E4E4E;
@@ -45,12 +45,10 @@
 .hideshare-list.shown{
   display: flex;
   align-items: center;
-  /*border: 2px solid red;*/
   color: #15CAFF;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
-  margin-left: 8.5rem;
   padding: 0;
-
+  margin-left: -4rem;
 }
 
 .hideshare-list a {
